@@ -6,8 +6,9 @@ from myproject.items import MyprojectItem as Item
 class PttSpider(scrapy.Spider):
     name = 'PTT'
     allowed_domains = ['https://www.ptt.cc/bbs/Gossiping/M.1577687305.A.E7E.html']
-    start_urls = ['http://www.ptt.cc/bbs/Gossiping/M.1577687305.A.E7E.html']
-
+    def __init__(self,start_urls=None, filename=None):
+        self.filename = filename
+        self.start_urls = start_urls
     def parse(self, response):
         item = response.css('span[class="article-meta-value"]::text').extract()
         createItem = Item()
