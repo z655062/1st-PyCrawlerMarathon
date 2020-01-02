@@ -13,7 +13,7 @@ class MyprojectPipeline(object):
         return item
     def open_spider(self, spider):
         print('開始!!')
-        self.file = open(spider.filename, 'w')
+        self.file = open('test.json', 'w')
     def close_spider(self, spider):
         self.file.close()
         print('結束!!!')

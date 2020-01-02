@@ -4,11 +4,16 @@ from scrapy.utils.project import get_project_settings
 
 
 def main():
-    target_urls = [
-        'http://www.ptt.cc/bbs/Gossiping/M.1577687305.A.E7E.html'
+    #target_urls = [
+    #    'http://www.ptt.cc/bbs/Gossiping/M.1577687305.A.E7E.html'
+    #]
+    boards = [
+        'Gossiping'
+#        'NBA'
     ]
     process = CrawlerProcess(get_project_settings())
-    process.crawl('PTT', start_urls=target_urls, filename='test.json')
+    for board in boards:
+        process.crawl('PTT', board=board)
     process.start()
 
 if __name__ == '__main__':

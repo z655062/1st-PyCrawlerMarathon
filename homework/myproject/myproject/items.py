@@ -14,4 +14,5 @@ class MyprojectItem(scrapy.Item):
     author = scrapy.Field()
     plate = scrapy.Field()
     creatTime = scrapy.Field()
+    article = scrapy.Field()
     #pass
